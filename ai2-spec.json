@@ -1,2 +1,60 @@
-ai2-spec
-========
+// 2014/11/03 Lyn & Karishma
+// First cut at what an AI2 blocks specfication looks like.
+// This will guide blocks <-> text conversion, as well as
+// blocks initialization and other blocks operations.
+// Should automatically handle internationalization
+
+// Some thoughts:
+// Goal: minimal description of any block from which many
+// other things can be automatically derived.
+
+// Random integer
+// An expresssion with two external expression inputs
+
+{
+ "math_random_int":
+  {"category": "Math",
+    // No need for color, since automatically determined from category.
+    "xml_name": "math_random_int",
+    "i8n_name": Blockly.Msg.LANG_MATH_RANDOM_INT_TITLE_RANDOM,
+    "type": "number",
+    "sockets": [{"label": Blockly.Msg.LANG_MATH_RANDOM_INT_INPUT_FROM,
+                 "xmlLabel": "FROM",
+                 "type": "number"},
+                {"label": Blockly.Msg.LANG_MATH_RANDOM_INT_INPUT_TO,
+                 "xmlLabel": "TO",
+                 "type", "number"}]
+    "inlined": true,
+    // What the heck is interpolateMsg and Blockly.Msg.LANG_MATH_RANDOM_INT_INPUT
+    "tooltip": Blockly.Msg.LANG_MATH_RANDOM_INT_TOOLTIP
+    },
+    
+     "controls_forEach":
+  {"category": "Control",
+   "type": "stm",
+   "previousStm": true,
+   "nextStm": true,
+    // No need for color, since automatically determined from category.
+    "xml_name": "controls_forEach",
+    "i8n_name": Blockly.Msg.LANG_CONTROLS_FOREACH_INPUT_ITEM,
+    "inputs": [{"inputType": "value",
+                "xmlName": "LIST",
+                "valueType": "boolean",
+                "fields": [Blockly.Msg.LANG_CONTROLS_FOREACH_INPUT_ITEM,
+                           {"fieldType": "ParameterFlydown",
+                            "xmlName": "VAR",
+                            "defaultName": Blockly.Msg.LANG_CONTROLS_FOREACH_INPUT_VAR},
+                           Blockly.Msg.LANG_CONTROLS_FOREACH_INPUT_INLIST]},
+               {"inputType": "statement",
+                "xmlName": Blockly.Msg.LANG_CONTROLS_FOREACH_INPUT_DO}]
+    "inlined": false,
+    // What the heck is interpolateMsg and Blockly.Msg.LANG_MATH_RANDOM_INT_INPUT
+    "tooltip": Blockly.Msg.LANG_CONTROLS_FOREACH
+    },
+
+ "controls_if": ...flesh this out...
+
+ "local_declaration_statement": ...flesh this out...
+  }
+
+
