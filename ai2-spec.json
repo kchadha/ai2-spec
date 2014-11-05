@@ -52,8 +52,26 @@
     "tooltip": Blockly.Msg.LANG_CONTROLS_FOREACH
     },
 
- "controls_if": ...flesh this out...
-
+//Karishma 11/05/14:
+ "controls_if":
+{"category": "Control",
+ "type": "stm,
+ "previousStm": true,
+ "nextStm": true,
+ "xml_name": "controls_if",
+ "i8n_name": Blockly.Msg.LANG_CONTROLS_IF_MSG_IF, //is this correct?
+ "inputs": [{"inputType": "value",
+             "xmlName": "IF0",
+             "valueType": "boolean",
+             "fields":[Blockly.Msg.LANG_CONTROLS_IF_MSG_IF]},
+             {"inputType": "statement",
+              "xmlName":"DO0",
+              "fields": [Blockly.Msg.LANG_CONTROLS_IF_MSG_THEN]}],
+ "mutator": {"mutationNames": ["controls_if_elseif", "controls_if_else"],
+             //....to be continued
+  
+ }
+}
  "local_declaration_statement": ...flesh this out...
   }
 
